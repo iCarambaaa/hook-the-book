@@ -15,9 +15,7 @@ const CommentArea = (props) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
-  useEffect(async () => {
-    setIsLoading(true);
-
+  const getComments = async () => {
     try {
       let response = await fetch(
         "https://striveschool-api.herokuapp.com/api/comments/" + props.asin,
@@ -44,6 +42,11 @@ const CommentArea = (props) => {
       setIsLoading(false);
       setIsError(true);
     }
+  };
+
+  useEffect(() => {
+    setIsLoading(true);
+    getComments();
   }, [props.asin]);
 
   //   componentDidUpdate = async (prevProps) => {
