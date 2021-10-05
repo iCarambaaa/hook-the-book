@@ -19,9 +19,9 @@ const AddComment = (props) => {
   //     }
   //   }
 
-  useEffect(() => {
-    setStateObject();
-  }, [stateObject]);
+  //   useEffect(() => {
+  //     setStateObject(stateObject);
+  //   }, [props.asin]);
 
   const sendComment = async (e) => {
     e.preventDefault();
@@ -33,9 +33,8 @@ const AddComment = (props) => {
           body: JSON.stringify(stateObject.comment),
           headers: {
             "Content-type": "application/json",
-
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTRiMzUyNjRiYjUzZDAwMTViMWEwMzQiLCJpYXQiOjE2MzM0Mzk0OTQsImV4cCI6MTYzNDY0OTA5NH0.aCFWesXwOAXs8l44Zsafj7Ni7xfAV1EyOJ48SdSotoA",
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTRiMzUyNjRiYjUzZDAwMTViMWEwMzQiLCJpYXQiOjE2MzM0NDg1NDcsImV4cCI6MTYzNDY1ODE0N30._h4zSIW9nccZoiOzb3MUajZeCRkTkULIjQH2sQ45k-g",
           },
         }
       );

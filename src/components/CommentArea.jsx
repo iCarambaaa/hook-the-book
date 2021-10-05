@@ -22,7 +22,7 @@ const CommentArea = (props) => {
         {
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI3OWY5NTgxNmI1YjAwMTU5NDA3NDAiLCJpYXQiOjE2MjI2NDY2NzcsImV4cCI6MTYyMzg1NjI3N30.y-rBwB5WAQOWBvWrLlAgTQUrbGulxd2M6cWH3VLyGLw",
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTRiMzUyNjRiYjUzZDAwMTViMWEwMzQiLCJpYXQiOjE2MzM0NDg1NDcsImV4cCI6MTYzNDY1ODE0N30._h4zSIW9nccZoiOzb3MUajZeCRkTkULIjQH2sQ45k-g",
           },
         }
       );
@@ -30,7 +30,7 @@ const CommentArea = (props) => {
       if (response.ok) {
         let comments = await response.json();
         setComments(comments);
-        setIsLoading(true);
+        setIsLoading(false);
         setIsError(false);
       } else {
         console.log("error");
@@ -46,7 +46,7 @@ const CommentArea = (props) => {
 
   useEffect(() => {
     setIsLoading(true);
-    getComments();
+    getComments(comments);
   }, [props.asin]);
 
   //   componentDidUpdate = async (prevProps) => {
